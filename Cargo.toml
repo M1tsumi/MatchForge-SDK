@@ -1,0 +1,47 @@
+[package]
+name = "matchforge"
+version = "0.1.0"
+edition = "2021"
+authors = ["Quefep"]
+license = "MIT OR Apache-2.0"
+description = "A plug-and-play matchmaking SDK for multiplayer games"
+repository = "https://github.com/matchforge/matchforge-sdk"
+keywords = ["matchmaking", "game", "multiplayer", "mmr", "elo"]
+categories = ["game-development", "network-programming"]
+
+[dependencies]
+tokio = { version = "1.35", features = ["full"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+thiserror = "1.0"
+uuid = { version = "1.6", features = ["v4", "serde"] }
+chrono = { version = "0.4", features = ["serde"] }
+async-trait = "0.1"
+rand = "0.8"
+
+[dependencies.redis]
+version = "0.24"
+optional = true
+
+[dependencies.sqlx]
+version = "0.7"
+features = ["runtime-tokio-rustls", "postgres", "uuid", "chrono"]
+optional = true
+
+[dev-dependencies]
+tokio-test = "0.4"
+criterion = { version = "0.5", features = ["html_reports"] }
+futures = "0.3"
+
+[[bench]]
+name = "matchmaking_benchmarks"
+harness = false
+
+[features]
+default = []
+redis = ["dep:redis"]
+postgres = ["dep:sqlx", "sqlx/runtime-tokio-rustls", "sqlx/postgres", "sqlx/uuid", "sqlx/chrono"]
+
+[profile.release]
+lto = true
+codegen-units = 1

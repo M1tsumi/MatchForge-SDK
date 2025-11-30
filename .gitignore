@@ -1,0 +1,107 @@
+# Rust
+/target/
+**/*.rs.bk
+Cargo.lock
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Debug
+target/
+debug/
+release/
+
+# Documentation
+/docs/
+/book/
+
+# Backup files
+*.bak
+*.backup
+*.old
+
+# Temporary files
+*.tmp
+*.temp
+
+# Test artifacts
+/tests/output/
+/benchmarks/output/
+
+# Coverage reports
+tarpaulin-report.html
+cobertura.xml
+lcov.info
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Redis dump
+dump.rdb
+
+# Node.js (if any)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Python (if any)
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+
+# Docker
+.dockerignore
+
+# Kubernetes secrets
+secrets/
+*.key
+*.pem
+*.crt
+
+# Performance profiling
+perf.data*
+flamegraph.svg
+
+# Build artifacts
+*.d
+*.o
+*.a
+*.so
+*.dll
+*.exe
+
+# Rust analyzer
+.rust-analyzer/
+
+# Local development
+local/
+dev/
+staging/
+
+# Backup and temp directories
+backup/
+tmp/
+temp/
